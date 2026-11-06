@@ -1,0 +1,46 @@
+{
+  "archivo_entrada": "clientes_churn.csv",
+  "archivo_reporte": "reporte_pipeline.json",
+  "columnas_requeridas": [
+    "id_cliente",
+    "antiguedad_meses",
+    "compras_trimestre",
+    "monto_promedio",
+    "reclamos",
+    "plan",
+    "abandono"
+  ],
+  "columna_objetivo": "abandono",
+  "columnas_modelo": [
+    "antiguedad_meses",
+    "compras_trimestre",
+    "monto_promedio",
+    "reclamos"
+  ],
+  "planes_validos": [
+    "Básico",
+    "Estándar",
+    "Premium"
+  ],
+  "rangos": {
+    "antiguedad_meses": [
+      0,
+      600
+    ],
+    "compras_trimestre": [
+      0,
+      60
+    ],
+    "monto_promedio": [
+      0,
+      2000000
+    ],
+    "reclamos": [
+      0,
+      30
+    ]
+  },
+  "test_size": 0.25,
+  "random_state": 42,
+  "umbral_accuracy": 0.65
+}

@@ -1,0 +1,207 @@
+{
+  "archivo_entrada": "clientes_churn.csv",
+  "validacion_antes": {
+    "filas": 1212,
+    "columnas_encontradas": [
+      "id_cliente",
+      "antiguedad_meses",
+      "compras_trimestre",
+      "monto_promedio",
+      "reclamos",
+      "plan",
+      "abandono"
+    ],
+    "columnas_faltantes": [],
+    "columnas_adicionales": [],
+    "nulos_por_columna": {
+      "id_cliente": 0,
+      "antiguedad_meses": 10,
+      "compras_trimestre": 0,
+      "monto_promedio": 15,
+      "reclamos": 0,
+      "plan": 0,
+      "abandono": 0
+    },
+    "duplicados_exactos": 12,
+    "ids_duplicados_excedentes": 12,
+    "planes_invalidos": 4,
+    "valores_no_numericos_por_columna": {
+      "antiguedad_meses": 0,
+      "compras_trimestre": 0,
+      "monto_promedio": 0,
+      "reclamos": 0,
+      "abandono": 0
+    },
+    "valores_fuera_de_rango_por_columna": {
+      "antiguedad_meses": 5,
+      "compras_trimestre": 0,
+      "monto_promedio": 7,
+      "reclamos": 4
+    },
+    "objetivos_invalidos": 0
+  },
+  "limpieza": {
+    "filas_entrada": 1212,
+    "duplicados_exactos_eliminados": 12,
+    "ids_duplicados_adicionales_eliminados": 0,
+    "filas_con_datos_invalidos_eliminadas": 44,
+    "filas_salida": 1156,
+    "filas_eliminadas_total": 56
+  },
+  "validacion_despues": {
+    "filas": 1156,
+    "columnas_encontradas": [
+      "id_cliente",
+      "antiguedad_meses",
+      "compras_trimestre",
+      "monto_promedio",
+      "reclamos",
+      "plan",
+      "abandono"
+    ],
+    "columnas_faltantes": [],
+    "columnas_adicionales": [],
+    "nulos_por_columna": {
+      "id_cliente": 0,
+      "antiguedad_meses": 0,
+      "compras_trimestre": 0,
+      "monto_promedio": 0,
+      "reclamos": 0,
+      "plan": 0,
+      "abandono": 0
+    },
+    "duplicados_exactos": 0,
+    "ids_duplicados_excedentes": 0,
+    "planes_invalidos": 0,
+    "valores_no_numericos_por_columna": {
+      "antiguedad_meses": 0,
+      "compras_trimestre": 0,
+      "monto_promedio": 0,
+      "reclamos": 0,
+      "abandono": 0
+    },
+    "valores_fuera_de_rango_por_columna": {
+      "antiguedad_meses": 0,
+      "compras_trimestre": 0,
+      "monto_promedio": 0,
+      "reclamos": 0
+    },
+    "objetivos_invalidos": 0,
+    "valido": true
+  },
+  "abandono_por_plan": {
+    "pandas": {
+      "Básico": {
+        "clientes": 540,
+        "tasa_abandono": 0.25
+      },
+      "Estándar": {
+        "clientes": 376,
+        "tasa_abandono": 0.18085106382978725
+      },
+      "Premium": {
+        "clientes": 240,
+        "tasa_abandono": 0.1
+      }
+    },
+    "sqlite3": {
+      "Básico": {
+        "clientes": 540,
+        "tasa_abandono": 0.25
+      },
+      "Estándar": {
+        "clientes": 376,
+        "tasa_abandono": 0.18085106382978725
+      },
+      "Premium": {
+        "clientes": 240,
+        "tasa_abandono": 0.1
+      }
+    },
+    "resultados_coinciden": true,
+    "comparacion_tiempo_segundos": {
+      "pandas": 0.00504,
+      "sqlite3": 0.004697
+    }
+  },
+  "modelos": {
+    "particion": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "filas_entrenamiento": 867,
+      "filas_prueba": 289
+    },
+    "DummyClassifier": {
+      "accuracy": 0.8027681660899654,
+      "recall": 0.0
+    },
+    "Pipeline_RegresionLogistica": {
+      "accuracy": 0.7958477508650519,
+      "recall": 0.15789473684210525
+    },
+    "umbral_accuracy": 0.65,
+    "logistica_supera_umbral_accuracy": true
+  },
+  "mediciones_por_etapa": {
+    "cargar_y_validar_configuracion": {
+      "tiempo_segundos": 0.000493,
+      "pico_memoria_python_bytes": 136616,
+      "pico_memoria_python_mib": 0.1303
+    },
+    "cargar_csv": {
+      "tiempo_segundos": 0.007695,
+      "pico_memoria_python_bytes": 431690,
+      "pico_memoria_python_mib": 0.4117
+    },
+    "validar_antes": {
+      "tiempo_segundos": 0.022245,
+      "pico_memoria_python_bytes": 274047,
+      "pico_memoria_python_mib": 0.2614
+    },
+    "limpiar_datos": {
+      "tiempo_segundos": 0.007733,
+      "pico_memoria_python_bytes": 199964,
+      "pico_memoria_python_mib": 0.1907
+    },
+    "validar_despues": {
+      "tiempo_segundos": 0.020342,
+      "pico_memoria_python_bytes": 254218,
+      "pico_memoria_python_mib": 0.2424
+    },
+    "tasa_abandono_pandas": {
+      "tiempo_segundos": 0.00504,
+      "pico_memoria_python_bytes": 80155,
+      "pico_memoria_python_mib": 0.0764
+    },
+    "tasa_abandono_sqlite3": {
+      "tiempo_segundos": 0.004697,
+      "pico_memoria_python_bytes": 10552,
+      "pico_memoria_python_mib": 0.0101
+    },
+    "particion_entrenamiento_prueba": {
+      "tiempo_segundos": 0.054326,
+      "pico_memoria_python_bytes": 1237765,
+      "pico_memoria_python_mib": 1.1804
+    },
+    "entrenar_dummy_classifier": {
+      "tiempo_segundos": 0.012608,
+      "pico_memoria_python_bytes": 51471,
+      "pico_memoria_python_mib": 0.0491
+    },
+    "entrenar_pipeline_regresion_logistica": {
+      "tiempo_segundos": 0.028793,
+      "pico_memoria_python_bytes": 143184,
+      "pico_memoria_python_mib": 0.1366
+    },
+    "guardar_reporte": {
+      "tiempo_segundos": 0.001359,
+      "pico_memoria_python_bytes": 154630,
+      "pico_memoria_python_mib": 0.1475
+    }
+  },
+  "etapa_mas_costosa_por_tiempo": {
+    "nombre": "particion_entrenamiento_prueba",
+    "tiempo_segundos": 0.054326
+  },
+  "nota_memoria": "Pico de asignaciones Python medido con tracemalloc; no incluye toda la memoria nativa reservada por NumPy o scikit-learn."
+}
