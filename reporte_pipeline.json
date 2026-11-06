@@ -120,8 +120,8 @@
     },
     "resultados_coinciden": true,
     "comparacion_tiempo_segundos": {
-      "pandas": 0.00504,
-      "sqlite3": 0.004697
+      "pandas": 0.004212,
+      "sqlite3": 0.00603
     }
   },
   "modelos": {
@@ -133,75 +133,88 @@
     },
     "DummyClassifier": {
       "accuracy": 0.8027681660899654,
-      "recall": 0.0
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
     },
     "Pipeline_RegresionLogistica": {
-      "accuracy": 0.7958477508650519,
-      "recall": 0.15789473684210525
+      "accuracy": 0.726643598615917,
+      "precision": 0.3877551020408163,
+      "recall": 0.6666666666666666,
+      "f1": 0.49032258064516127
     },
     "umbral_accuracy": 0.65,
-    "logistica_supera_umbral_accuracy": true
+    "logistica_supera_umbral_accuracy": true,
+    "umbral_prediccion_logistica": 0.21153074000020922,
+    "filas_ajuste_umbral": 650,
+    "filas_validacion_umbral": 217,
+    "criterio_seleccion_umbral": "maximizar F1 en validación, usando solo los datos de entrenamiento"
   },
   "mediciones_por_etapa": {
     "cargar_y_validar_configuracion": {
-      "tiempo_segundos": 0.000493,
+      "tiempo_segundos": 0.000855,
       "pico_memoria_python_bytes": 136616,
       "pico_memoria_python_mib": 0.1303
     },
     "cargar_csv": {
-      "tiempo_segundos": 0.007695,
+      "tiempo_segundos": 0.006194,
       "pico_memoria_python_bytes": 431690,
       "pico_memoria_python_mib": 0.4117
     },
     "validar_antes": {
-      "tiempo_segundos": 0.022245,
-      "pico_memoria_python_bytes": 274047,
-      "pico_memoria_python_mib": 0.2614
+      "tiempo_segundos": 0.019894,
+      "pico_memoria_python_bytes": 273935,
+      "pico_memoria_python_mib": 0.2612
     },
     "limpiar_datos": {
-      "tiempo_segundos": 0.007733,
-      "pico_memoria_python_bytes": 199964,
+      "tiempo_segundos": 0.011065,
+      "pico_memoria_python_bytes": 200013,
       "pico_memoria_python_mib": 0.1907
     },
     "validar_despues": {
-      "tiempo_segundos": 0.020342,
-      "pico_memoria_python_bytes": 254218,
-      "pico_memoria_python_mib": 0.2424
+      "tiempo_segundos": 0.022937,
+      "pico_memoria_python_bytes": 253968,
+      "pico_memoria_python_mib": 0.2422
     },
     "tasa_abandono_pandas": {
-      "tiempo_segundos": 0.00504,
+      "tiempo_segundos": 0.004212,
       "pico_memoria_python_bytes": 80155,
       "pico_memoria_python_mib": 0.0764
     },
     "tasa_abandono_sqlite3": {
-      "tiempo_segundos": 0.004697,
+      "tiempo_segundos": 0.00603,
       "pico_memoria_python_bytes": 10552,
       "pico_memoria_python_mib": 0.0101
     },
     "particion_entrenamiento_prueba": {
-      "tiempo_segundos": 0.054326,
-      "pico_memoria_python_bytes": 1237765,
-      "pico_memoria_python_mib": 1.1804
+      "tiempo_segundos": 0.058513,
+      "pico_memoria_python_bytes": 1237557,
+      "pico_memoria_python_mib": 1.1802
     },
     "entrenar_dummy_classifier": {
-      "tiempo_segundos": 0.012608,
-      "pico_memoria_python_bytes": 51471,
-      "pico_memoria_python_mib": 0.0491
+      "tiempo_segundos": 0.028343,
+      "pico_memoria_python_bytes": 63230,
+      "pico_memoria_python_mib": 0.0603
+    },
+    "seleccionar_umbral_f1": {
+      "tiempo_segundos": 0.029752,
+      "pico_memoria_python_bytes": 187477,
+      "pico_memoria_python_mib": 0.1788
     },
     "entrenar_pipeline_regresion_logistica": {
-      "tiempo_segundos": 0.028793,
-      "pico_memoria_python_bytes": 143184,
-      "pico_memoria_python_mib": 0.1366
+      "tiempo_segundos": 0.040459,
+      "pico_memoria_python_bytes": 136311,
+      "pico_memoria_python_mib": 0.13
     },
     "guardar_reporte": {
-      "tiempo_segundos": 0.001359,
-      "pico_memoria_python_bytes": 154630,
-      "pico_memoria_python_mib": 0.1475
+      "tiempo_segundos": 0.001384,
+      "pico_memoria_python_bytes": 156637,
+      "pico_memoria_python_mib": 0.1494
     }
   },
   "etapa_mas_costosa_por_tiempo": {
     "nombre": "particion_entrenamiento_prueba",
-    "tiempo_segundos": 0.054326
+    "tiempo_segundos": 0.058513
   },
   "nota_memoria": "Pico de asignaciones Python medido con tracemalloc; no incluye toda la memoria nativa reservada por NumPy o scikit-learn."
 }
